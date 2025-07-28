@@ -29,7 +29,7 @@ const translation = {
       enableWarning: 'Архівований файл неможливо активувати',
       sync: 'Синхронізувати',
       pause: 'Пауза',
-      resume: 'Резюме',
+      resume: 'Продовжити',
     },
     index: {
       enable: 'Активувати',
@@ -369,6 +369,7 @@ const translation = {
     empty: 'Шматок не знайдено',
     chunks_other: 'ШМАТКИ',
     editedAt: 'За редакцією',
+    dateTimeFormat: 'DD.MM.YYYY HH:mm',
     searchResults_zero: 'РЕЗУЛЬТАТ',
     collapseChunks: 'Згортання шматків',
     childChunkAdded: 'Додано 1 дочірній фрагмент',

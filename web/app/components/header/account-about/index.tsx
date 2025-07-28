@@ -11,16 +11,16 @@ import { noop } from 'lodash-es'
 import { useGlobalPublicStore } from '@/context/global-public-context'
 
 type IAccountSettingProps = {
-  langeniusVersionInfo: LangGeniusVersionResponse
+  langGeniusVersionInfo: LangGeniusVersionResponse
   onCancel: () => void
 }
 
 export default function AccountAbout({
-  langeniusVersionInfo,
+  langGeniusVersionInfo,
   onCancel,
 }: IAccountSettingProps) {
   const { t } = useTranslation()
-  const isLatest = langeniusVersionInfo.current_version === langeniusVersionInfo.latest_version
+  const isLatest = langGeniusVersionInfo.current_version === langGeniusVersionInfo.latest_version
   const systemFeatures = useGlobalPublicStore(s => s.systemFeatures)
 
   return (
@@ -42,7 +42,7 @@ export default function AccountAbout({
             />
             : <DifyLogo size='large' className='mx-auto' />}
 
-          <div className='text-center text-xs font-normal text-text-tertiary'>Version {langeniusVersionInfo?.current_version}</div>
+          <div className='text-center text-xs font-normal text-text-tertiary'>Version {langGeniusVersionInfo?.current_version}</div>
           <div className='flex flex-col items-center gap-2 text-center text-xs font-normal text-text-secondary'>
             {/* <div>© {dayjs().year()} LangGenius, Inc., Contributors.</div> */}
             <div className='text-text-accent'>
@@ -62,8 +62,8 @@ export default function AccountAbout({
           <div className='text-xs font-medium text-text-tertiary'>
             {
               isLatest
-                ? t('common.about.latestAvailable', { version: langeniusVersionInfo.latest_version })
-                : t('common.about.nowAvailable', { version: langeniusVersionInfo.latest_version })
+                ? t('common.about.latestAvailable', { version: langGeniusVersionInfo.latest_version })
+                : t('common.about.nowAvailable', { version: langGeniusVersionInfo.latest_version })
             }
           </div>
           <div className='flex items-center'>
@@ -79,7 +79,7 @@ export default function AccountAbout({
               !isLatest && !IS_CE_EDITION && (
                 <Button variant='primary' size='small'>
                   <Link
-                    href={langeniusVersionInfo.release_notes}
+                    href={langGeniusVersionInfo.release_notes}
                     target='_blank' rel='noopener noreferrer'
                   >
                     {t('common.about.updateNow')}
