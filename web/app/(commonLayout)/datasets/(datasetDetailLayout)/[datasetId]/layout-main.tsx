@@ -16,7 +16,7 @@ import {
 import {
   PaperClipIcon,
 } from '@heroicons/react/24/outline'
-import { RiApps2AddLine, RiBookOpenLine, RiInformation2Line } from '@remixicon/react'
+import { RiInformation2Line } from '@remixicon/react'
 import classNames from '@/utils/classnames'
 import { fetchDatasetDetail, fetchDatasetRelatedApps } from '@/service/datasets'
 import type { RelatedAppResponse } from '@/models/datasets'
@@ -83,31 +83,31 @@ const ExtraInfo = ({ isMobile, relatedApps, expand }: IExtraInfoProps) => {
       </>
     )}
     {!hasRelatedApps && !expand && (
-      <Tooltip
-        position='right'
-        noDecoration
-        popupContent={
-          <div className='w-[240px] rounded-xl border-[0.5px] border-components-panel-border bg-components-panel-bg-blur p-4'>
-            <div className='inline-flex rounded-lg border-[0.5px] border-components-panel-border-subtle bg-background-default-subtle p-2'>
-              <RiApps2AddLine className='h-4 w-4 text-text-tertiary' />
-            </div>
-            <div className='my-2 text-xs text-text-tertiary'>{t('common.datasetMenus.emptyTip')}</div>
-            <a
-              className='mt-2 inline-flex cursor-pointer items-center text-xs text-text-accent'
-              href={docLink('/guides/knowledge-base/integrate-knowledge-within-application')}
-              target='_blank' rel='noopener noreferrer'
-            >
-              <RiBookOpenLine className='mr-1 text-text-accent' />
-              {t('common.datasetMenus.viewDoc')}
-            </a>
-          </div>
-        }
-      >
+      // <Tooltip
+      //   position='right'
+      //   noDecoration
+      //   popupContent={
+      //     <div className='w-[240px] rounded-xl border-[0.5px] border-components-panel-border bg-components-panel-bg-blur p-4'>
+      //       <div className='inline-flex rounded-lg border-[0.5px] border-components-panel-border-subtle bg-background-default-subtle p-2'>
+      //         <RiApps2AddLine className='w-4 h-4 text-text-tertiary' />
+      //       </div>
+      //       <div className='my-2 text-xs text-text-tertiary'>{t('common.datasetMenus.emptyTip')}</div>
+      //       <a
+      //         className='inline-flex items-center mt-2 text-xs cursor-pointer text-text-accent'
+      //         href={docLink('/guides/knowledge-base/integrate-knowledge-within-application')}
+      //         target='_blank' rel='noopener noreferrer'
+      //       >
+      //         <RiBookOpenLine className='mr-1 text-text-accent' />
+      //         {t('common.datasetMenus.viewDoc')}
+      //       </a>
+      //     </div>
+      //   }
+      // >
         <div className='system-xs-medium-uppercase inline-flex cursor-pointer items-center space-x-1 text-text-secondary'>
           <span>{t('common.datasetMenus.noRelatedApp')}</span>
           <RiInformation2Line className='h-4 w-4' />
         </div>
-      </Tooltip>
+      // </Tooltip>
     )}
   </div>
 }

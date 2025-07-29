@@ -9,7 +9,6 @@ import {
   RiCheckboxCircleFill,
   RiErrorWarningFill,
   RiLoader2Fill,
-  RiTerminalBoxLine,
 } from '@remixicon/react'
 import Image from 'next/image'
 import { indexMethodIcon, retrievalIcon } from '../icons'
@@ -101,7 +100,6 @@ const RuleDetail: FC<{
         break
     }
     return value
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sourceData])
 
   return <div className='flex flex-col gap-1'>
@@ -196,7 +194,6 @@ const EmbeddingProcess: FC<Props> = ({ datasetId, batchId, documents = [], index
     return () => {
       stopQueryStatus()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // get rule
@@ -341,10 +338,10 @@ const EmbeddingProcess: FC<Props> = ({ datasetId, batchId, documents = [], index
         retrievalMethod={retrievalMethod}
       />
       <div className='my-10 flex items-center gap-2'>
-        <Button className='w-fit' onClick={navToApiDocs}>
+        {/* <Button className='w-fit' onClick={navToApiDocs}>
           <RiTerminalBoxLine className='mr-2 size-4' />
           <span>Access the API</span>
-        </Button>
+        </Button> */}
         <Button className='w-fit' variant='primary' onClick={navToDocumentList}>
           <span>{t('datasetCreation.stepThree.navTo')}</span>
           <ArrowRightIcon className='ml-2 size-4 stroke-current stroke-1' />

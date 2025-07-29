@@ -988,9 +988,9 @@ const StepTwo = ({
               <div className={'mb-1'}>
                 <div className='system-md-semibold mb-0.5 text-text-secondary'>{t('datasetSettings.form.retrievalSetting.title')}</div>
                 <div className='body-xs-regular text-text-tertiary'>
-                  <a target='_blank' rel='noopener noreferrer'
+                  {/* <a target='_blank' rel='noopener noreferrer'
                     href={docLink('/guides/knowledge-base/create-knowledge-and-upload-documents')}
-                    className='text-text-accent'>{t('datasetSettings.form.retrievalSetting.learnMore')}</a>
+                    className='text-text-accent'>{t('datasetSettings.form.retrievalSetting.learnMore')}</a> */}
                   {t('datasetSettings.form.retrievalSetting.longDescription')}
                 </div>
               </div>

@@ -275,14 +275,14 @@ const AppCard = ({ app, onRefresh }: AppCardProps) => {
             </button>
           </>
         )}
-        {
+        {/* {
           (isGettingUserCanAccessApp || !userCanAccessApp?.result) ? null : <>
             <Divider className="my-1" />
-            <button className='mx-1 flex h-8 cursor-pointer items-center gap-2 rounded-lg px-3 hover:bg-state-base-hover' onClick={onClickInstalledApp}>
+            <button className='flex items-center h-8 gap-2 px-3 mx-1 rounded-lg cursor-pointer hover:bg-state-base-hover' onClick={onClickInstalledApp}>
               <span className='system-sm-regular text-text-secondary'>{t('app.openInExplore')}</span>
             </button>
           </>
-        }
+        } */}
         <Divider className="my-1" />
         {
           systemFeatures.webapp_auth.enabled && isCurrentWorkspaceEditor && <>

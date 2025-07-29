@@ -1,11 +1,7 @@
 import { useCallback, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { useTranslation } from 'react-i18next'
-import Link from 'next/link'
-import {
-  RiArrowDownSLine,
-  RiArrowRightUpLine,
-} from '@remixicon/react'
+
 import type {
   ModelProvider,
 } from './declarations'
@@ -13,13 +9,9 @@ import {
   useMarketplaceAllPlugins,
 } from './hooks'
 import Divider from '@/app/components/base/divider'
-import Loading from '@/app/components/base/loading'
 import ProviderCard from '@/app/components/plugins/provider-card'
-import List from '@/app/components/plugins/marketplace/list'
 import type { Plugin } from '@/app/components/plugins/types'
-import cn from '@/utils/classnames'
 import { getLocaleOnClient } from '@/i18n-config'
-import { getMarketplaceUrl } from '@/utils/var'
 
 type InstallFromMarketplaceProps = {
   providers: ModelProvider[]
@@ -49,20 +41,20 @@ const InstallFromMarketplace = ({
     <div className='mb-2'>
       <Divider className='!mt-4 h-px' />
       <div className='flex items-center justify-between'>
-        <div className='system-md-semibold flex cursor-pointer items-center gap-1 text-text-primary' onClick={() => setCollapse(!collapse)}>
+        {/* <div className='flex items-center gap-1 cursor-pointer system-md-semibold text-text-primary' onClick={() => setCollapse(!collapse)}>
           <RiArrowDownSLine className={cn('h-4 w-4', collapse && '-rotate-90')} />
           {t('common.modelProvider.installProvider')}
-        </div>
-        <div className='mb-2 flex items-center pt-2'>
-          <span className='system-sm-regular pr-1 text-text-tertiary'>{t('common.modelProvider.discoverMore')}</span>
-          <Link target="_blank" href={getMarketplaceUrl('', { theme })} className='system-sm-medium inline-flex items-center text-text-accent'>
+        </div> */}
+        {/* <div className='flex items-center pt-2 mb-2'>
+          <span className='pr-1 system-sm-regular text-text-tertiary'>{t('common.modelProvider.discoverMore')}</span>
+          <Link target="_blank" href={getMarketplaceUrl('', { theme })} className='inline-flex items-center system-sm-medium text-text-accent'>
             {t('plugin.marketplace.difyMarketplace')}
-            <RiArrowRightUpLine className='h-4 w-4' />
+            <RiArrowRightUpLine className='w-4 h-4' />
           </Link>
-        </div>
+        </div> */}
       </div>
-      {!collapse && isAllPluginsLoading && <Loading type='area' />}
-      {
+      {/* {!collapse && isAllPluginsLoading && <Loading type='area' />} */}
+      {/* {
         !isAllPluginsLoading && !collapse && (
           <List
             marketplaceCollections={[]}
@@ -75,7 +67,7 @@ const InstallFromMarketplace = ({
             emptyClassName='h-auto'
           />
         )
-      }
+      } */}
     </div>
   )
 }

@@ -16,9 +16,7 @@ import Doc from './Doc'
 import TabSliderNew from '@/app/components/base/tab-slider-new'
 import TagManagementModal from '@/app/components/base/tag-management'
 import TagFilter from '@/app/components/base/tag-management/filter'
-import Button from '@/app/components/base/button'
 import Input from '@/app/components/base/input'
-import { ApiConnectionMod } from '@/app/components/base/icons/src/vender/solid/development'
 import CheckboxWithLabel from '@/app/components/datasets/create/website/base/checkbox-with-label'
 
 // Services
@@ -45,7 +43,7 @@ const Container = () => {
   const options = useMemo(() => {
     return [
       { value: 'dataset', text: t('dataset.datasets') },
-      ...(currentWorkspace.role === 'dataset_operator' ? [] : [{ value: 'api', text: t('dataset.datasetsApi') }]),
+      // ...(currentWorkspace.role === 'dataset_operator' ? [] : [{ value: 'api', text: t('dataset.datasetsApi') }]),
     ]
   }, [currentWorkspace.role, t])
 
@@ -113,13 +111,13 @@ const Container = () => {
               onClear={() => handleKeywordsChange('')}
             />
             <div className="h-4 w-[1px] bg-divider-regular" />
-            <Button
+            {/* <Button
               className='shadows-shadow-xs gap-0.5'
               onClick={() => setShowExternalApiPanel(true)}
             >
-              <ApiConnectionMod className='h-4 w-4 text-components-button-secondary-text' />
+              <ApiConnectionMod className='w-4 h-4 text-components-button-secondary-text' />
               <div className='system-sm-medium flex items-center justify-center gap-1 px-0.5 text-components-button-secondary-text'>{t('dataset.externalAPIPanelTitle')}</div>
-            </Button>
+            </Button> */}
           </div>
         )}
         {activeTab === 'api' && data && <ApiServer apiBaseUrl={data.api_base_url || ''} />}
